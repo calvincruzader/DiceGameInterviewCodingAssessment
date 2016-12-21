@@ -1,0 +1,3 @@
+com\manifestcorp\IQityDiceGameAssessment\DiceValidity.class
+com\manifestcorp\IQityDiceGameAssessment\DiceScore.class
+com\manifestcorp\IQityDiceGameAssessment\InvalidDiceInputException.class
