@@ -9,6 +9,12 @@ import org.junit.Before;
 
 public class DiceScoreTest {
 	
+	private static final String SAMPLE_TEST_CASE_1 = "[1,2,3,4,5]";
+	private static final String SAMPLE_TEST_CASE_2 = "[1,1,1,2,2]";
+	private static final String SAMPLE_TEST_CASE_3 = "[5,4,5,4,5]";
+	private static final String SAMPLE_TEST_CASE_4 = "[4,4,4,4,4]";
+	private static final String SAMPLE_TEST_CASE_5 = "[1,5,5,5,1]";
+	
 	private static final String INVALID_DICE_INPUT = "[1,2,3,5,7]";
 	private static final String SET_OF_3_1S = "[1,2,3,1,1]";
 	private static final String FOUR_1S = "[1,1,2,1,1]";
@@ -50,6 +56,15 @@ public class DiceScoreTest {
 	@Test
 	public void testSetOf3Matching1s() throws Exception {
 		assertEquals("Checks if 3 ones gives 1000 points", 1000, diceScore.computeScore(SET_OF_3_1S));
+	}
+	
+	@Test
+	public void testSampleTestCases() throws Exception {
+		assertEquals("Checks if a roll of 1,2,3,4,5 gives 140 points", 140, diceScore.computeScore(SAMPLE_TEST_CASE_1));
+		assertEquals("Checks if a roll of 1,1,1,2,2 gives 1000 points", 1000, diceScore.computeScore(SAMPLE_TEST_CASE_2));
+		assertEquals("Checks if a roll of 5,4,5,4,5 gives 580 points", 580, diceScore.computeScore(SAMPLE_TEST_CASE_3));
+		assertEquals("Checks if a roll of 4,4,4,4,4 gives 480 points", 480, diceScore.computeScore(SAMPLE_TEST_CASE_4));
+		assertEquals("Checks if a roll of 1,5,5,5,1 gives 700 points", 700, diceScore.computeScore(SAMPLE_TEST_CASE_5));
 	}
 	
 	@Test
